@@ -1,4 +1,4 @@
-TODO: criando servidor
+//criando servidor
 const express = require('express');
 const server = express();
 
