@@ -69,4 +69,15 @@ server.put('/customers/:id', (req, res) => {
   return res.status(status).json(customers[customerIndex]);
 });
 
+//delete
+server.delete('/customers/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const customerIndex = customers.findIndex(item => item.id === id);
+  const status = customerIndex >= 0 ? 204 : 404;
+  if (customerIndex >= 0) {
+    customers.splice(customerIndex, 1);
+  }
+  return res.status(status).json();
+});
+
 server.listen(3000);
