@@ -27,4 +27,25 @@ return res.json({
   })
  })
 
+ //listagem dos registros
+server.use(express.json());
+
+let customers = [
+  {id:1, name: "Daniel", site:"https://danielcrubens.dev"},
+  {id:2, name: "Google", site:"https://google.com"},
+  {id:3, name: "Uol", site:"https://uol.com.br"},
+];
+//list
+server.get('/customers', (req, res) => {
+  return res.json(customers);
+});
+
+//show
+server.get('/customers/:id', (req, res) => {
+  const id = parseInt (req.params.id); 
+  const customer = customers.find(item => item.id == id);
+  const status = customer ? 200 : 404;
+  return res.status(status).json(customer);
+});
+
 server.listen(3000);
