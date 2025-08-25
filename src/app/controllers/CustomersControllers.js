@@ -45,4 +45,4 @@ class CustomersControllers {
   return res.status(status).json();
   }
 }
-module.exports = new CustomersControllers();
+export default new CustomersControllers();
