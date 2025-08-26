@@ -1,4 +1,4 @@
-import express  from 'express'
+import express from 'express';
 import routes from './routes';
 
 class App {
@@ -15,4 +15,4 @@ class App {
     this.server.use(routes);
   }
 }
- export default new App().server;
+export default new App().server;

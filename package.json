@@ -8,12 +8,17 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon ./src/server.js"
+    "dev": "nodemon ./src/server.js",
+    "format": "biome format --write .",
+    "lint": "biome lint .",
+    "check": "biome check .",
+    "check:fix": "biome check --apply ."
   },
   "dependencies": {
     "express": "^5.1.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.8.3",
     "nodemon": "^3.1.10",
     "sucrase": "^3.35.0"
   }
